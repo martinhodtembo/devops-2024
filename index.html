@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Empire Online Marketing</title>
+    <title>Café Moments</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        .header { background-color: #333; color: white; text-align: center; padding: 10px 0; }
-        .nav-bar { overflow: hidden; background-color: #333; }
-        .nav-bar a { float: left; display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
-        .nav-bar a:hover { background-color: #ddd; color: black; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #FAF0E6; }
+        .header { background-color: #8B4513; color: #FFF5EE; text-align: center; padding: 20px; }
+        .nav-bar { overflow: hidden; background-color: #8B4513; }
+        .nav-bar a { float: left; display: block; color: #FFF5EE; text-align: center; padding: 14px 20px; text-decoration: none; }
+        .nav-bar a:hover { background-color: #DEB887; color: white; }
         .main { padding: 20px; }
-        .section { background-color: white; margin: 20px 0; padding: 20px; border-radius: 5px; }
-        .footer { background-color: #333; color: white; text-align: center; padding: 10px 0; }
+        .section { background-color: #FFF8DC; margin: 20px 0; padding: 20px; border-radius: 8px; }
+        .footer { background-color: #8B4513; color: #FFF5EE; text-align: center; padding: 10px 0; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1>Empire Online Marketing</h1>
+    <h1>Welcome to Café Moments</h1>
 </div>
 
 <div class="nav-bar">
-    <a href="#services">Services</a>
+    <a href="#menu">Our Menu</a>
     <a href="#about">About Us</a>
-    <a href="#contact">Contact</a>
+    <a href="#" onclick="displaySpecials(); return false;">Today's Specials</a>
 </div>
 
 <div class="main">
-    <div class="section" id="services">
-        <h2>Our Services</h2>
-        <p>Describe your services here...</p>
+    <div class="section" id="menu">
+        <h2>Our Menu</h2>
+        <p>Explore our selection of coffee, tea, and homemade pastries.</p>
     </div>
 
     <div class="section" id="about">
         <h2>About Us</h2>
-        <p>Information about your company...</p>
+        <p>Discover the story behind our passion for fine coffee and community.</p>
     </div>
-
-    <div class="section" id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: contact@ezyempire.com</p>
-        <p>Phone: 123-456-7890</p>
+    
+    <div class="section" id="specials">
+        <h2>Today's Specials</h2>
+        <!-- Intentional Bug: Potential Security Issue (XSS) if user input is not sanitized -->
+        <p id="specialsContent">Please click "Today's Specials" to see what we have for you.</p>
     </div>
 </div>
 
 <div class="footer">
-    <p>&copy; 2024 Empire Online Marketing</p>
+    <p>&copy; 2024 Café Moments</p>
 </div>
+
+<script>
+// Intentional Bug: Displaying unsanitized user input could lead to XSS
+function displaySpecials() {
+    // Example of potential XSS vulnerability if this text is user-controlled and not sanitized
+    document.getElementById('specialsContent').innerHTML = "Special discount on all beverages!";
+}
+</script>
 
 </body>
 </html>
