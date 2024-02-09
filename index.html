@@ -22,7 +22,7 @@
 <div class="nav-bar">
     <a href="#menu">Our Menu</a>
     <a href="#about">About Us</a>
-    <a href="#" onclick="displaySpecials(); return false;">Today's Specials</a>
+    <a href="javascript:void(0);" id="specialsLink">Today's Specials</a>
 </div>
 
 <div class="main">
@@ -38,7 +38,6 @@
     
     <div class="section" id="specials">
         <h2>Today's Specials</h2>
-        <!-- Intentional Bug: Potential Security Issue (XSS) if user input is not sanitized -->
         <p id="specialsContent">Please click "Today's Specials" to see what we have for you.</p>
     </div>
 </div>
@@ -48,11 +47,15 @@
 </div>
 
 <script>
-// Intentional Bug: Displaying unsanitized user input could lead to XSS
-function displaySpecials() {
-    // Example of potential XSS vulnerability if this text is user-controlled and not sanitized
-    document.getElementById('specialsContent').innerHTML = "Special discount on all beverages!";
-}
+document.getElementById('specialsLink').addEventListener('click', function() {
+    var dayOfWeek = new Date().getDay();
+    // Intentional issue: Using == which can lead to unexpected type coercion
+    if (dayOfWeek == 5) { // "5" represents Friday; using == for demonstration
+        document.getElementById('specialsContent').textContent = "Enjoy a free cookie with every coffee purchase today!";
+    } else {
+        document.getElementById('specialsContent').textContent = "Check back tomorrow for more specials.";
+    }
+});
 </script>
 
 </body>
