@@ -1,61 +1,50 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>Café Moments</title>
+    <title>Book Haven</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #FAF0E6; }
-        .header { background-color: #8B4513; color: #FFF5EE; text-align: center; padding: 20px; }
+        body { font-family: 'Georgia', serif; margin: 0; padding: 0; background-color: #F5F5DC; }
+        .header { background-color: #8B4513; color: #FFFFFF; text-align: center; padding: 20px; }
         .nav-bar { overflow: hidden; background-color: #8B4513; }
-        .nav-bar a { float: left; display: block; color: #FFF5EE; text-align: center; padding: 14px 20px; text-decoration: none; }
-        .nav-bar a:hover { background-color: #DEB887; color: white; }
+        .nav-bar a { float: left; display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none; }
+        .nav-bar a:hover { background-color: #A0522D; color: white; }
         .main { padding: 20px; }
-        .section { background-color: #FFF8DC; margin: 20px 0; padding: 20px; border-radius: 8px; }
-        .footer { background-color: #8B4513; color: #FFF5EE; text-align: center; padding: 10px 0; }
+        .section { background-color: #FFF8DC; margin: 20px 0; padding: 20px; border-radius: 5px; }
+        .footer { background-color: #8B4513; color: white; text-align: center; padding: 10px 0; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1>Welcome to Café Moments</h1>
+    <h1>Welcome to Book Haven</h1>
 </div>
 
 <div class="nav-bar">
-    <a href="#menu">Our Menu</a>
-    <a href="#about">About Us</a>
-    <a href="javascript:void(0);" id="specialsLink">Today's Specials</a>
+    <a href="#new-arrivals">New Arrivals</a>
+    <a href="#best-sellers">Best Sellers</a>
+    <a href="#about-us">About Us</a>
 </div>
 
 <div class="main">
-    <div class="section" id="menu">
-        <h2>Our Menu</h2>
-        <p>Explore our selection of coffee, tea, and homemade pastries.</p>
+    <div class="section" id="new-arrivals">
+        <h2>New Arrivals</h2>
+        <p>Discover the latest titles in literature, science, and art.</p>
     </div>
 
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>Discover the story behind our passion for fine coffee and community.</p>
+    <div class="section" id="best-sellers">
+        <h2>Best Sellers</h2>
+        <p>Explore the books that captivated readers around the world.</p>
     </div>
-    
-    <div class="section" id="specials">
-        <h2>Today's Specials</h2>
-        <p id="specialsContent">Please click "Today's Specials" to see what we have for you.</p>
+
+    <div class="section" id="about-us">
+        <h2>About Us</h2>
+        <p>Book Haven is your gateway to the universe of knowledge and imagination. Founded in 2020, we pride ourselves on curating a diverse selection of books for all ages and interests.</p>
     </div>
 </div>
 
 <div class="footer">
-    <p>&copy; 2024 Café Moments</p>
+    <p>&copy; 2024 Book Haven</p>
 </div>
-
-<script>
-document.getElementById('specialsLink').addEventListener('click', function() {
-    var dayOfWeek = new Date().getDay();
-    // Intentional issue: Using == which can lead to unexpected type coercion
-    if (dayOfWeek == 5) { // "5" represents Friday; using == for demonstration
-        document.getElementById('specialsContent').textContent = "Enjoy a free cookie with every coffee purchase today!";
-    } else {
-        document.getElementById('specialsContent').textContent = "Check back tomorrow for more specials.";
-    }
-});
-</script>
 
 </body>
 </html>
